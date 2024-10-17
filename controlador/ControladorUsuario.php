@@ -8,7 +8,7 @@ class ControladorUsuario {
 
             if (preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingUsuario"]) && preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingPassword"])) {
 
-                $tabla = 'usuarios';  // Nombre de la tabla
+                $tabla = 'usuario';  // Nombre de la tabla
                 $item = 'usuario';  // Nombre de la columna que almacena el nombre de usuario
                 $valor = $_POST["ingUsuario"];
 
