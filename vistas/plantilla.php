@@ -53,7 +53,8 @@ include 'vistas/layout/asidebar.php';
             $_GET["ruta"] == "inicio" ||
             $_GET["ruta"] == "usuarios" ||
             $_GET["ruta"] == "productos" ||
-            $_GET["ruta"] == "categorias"
+            $_GET["ruta"] == "categorias"||
+            $_GET["ruta"] == "proveedores"
         ) {
             include "layout/" . $_GET["ruta"] . ".php";
         } else {
