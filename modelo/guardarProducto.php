@@ -22,7 +22,7 @@ try {
         $stmt->execute([$nombre, $categoria_id, $proveedor_id, $precio_costo, $precio_venta, $cantidad]);
     }
 
-    header("Location: ../index.php"); // Redirigir a la página principal después de guardar
+    header("Location: ttp://localhost/plantillaDesarrollo/plantilla-desarrollo/productos"); // Redirigir a la página principal después de guardar
 } catch (PDOException $e) {
     die("Error al guardar el producto: " . $e->getMessage());
 }

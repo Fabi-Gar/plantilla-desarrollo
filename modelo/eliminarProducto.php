@@ -8,7 +8,7 @@ try {
     $stmt = $con->prepare("DELETE FROM productos WHERE id = ?");
     $stmt->execute([$id]);
 
-    header("Location: ../index.php"); // Redirigir a la página principal después de eliminar
+    header("Location: http://localhost/plantillaDesarrollo/plantilla-desarrollo/productos"); // Redirigir a la página principal después de eliminar
 } catch (PDOException $e) {
     die("Error al eliminar el producto: " . $e->getMessage());
 }
