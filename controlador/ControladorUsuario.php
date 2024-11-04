@@ -8,17 +8,17 @@ class ControladorUsuario {
 
             if (preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingUsuario"]) && preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingPassword"])) {
 
-                $tabla = 'usuario';  // Nombre de la tabla
-                $item = 'usuario';  // Nombre de la columna que almacena el nombre de usuario
+                $tabla = 'usuario';  
+                $item = 'usuario';  
                 $valor = $_POST["ingUsuario"];
 
                 $respuesta = ModeloUsuario::MdlBuscarUsuario($tabla, $item, $valor);
 
-                // Debug: Mostrar los datos obtenidos
+                
                 var_dump($respuesta);
 
                 if ($respuesta) {
-                    // Comparar la contraseña en texto claro
+                    
                     if ($_POST["ingPassword"] === $respuesta["password"]) {
                         session_start();
                         $_SESSION['usuario'] = $respuesta['usuario'];

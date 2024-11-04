@@ -1,14 +1,8 @@
 <?php
 require_once 'modelo/Conexion.php'; 
 
-try {
-    $con = Conexion::Conectar();
-    $stmt = $con->prepare("SELECT id_categoria, nombre FROM categorias");
-    $stmt->execute();
-    $categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);  
-} catch (PDOException $e) {
-    die("Error al obtener categorías: " . $e->getMessage());
-}
+require 'modelo/obtenerCategorias.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +16,7 @@ try {
 <body>
 
 <div class="container mt-4">
-    <!-- Botón para abrir el formulario -->
+    
     <button type="button" class="btn btn-primary" onclick="abrirFormulario()">Agregar Categoría</button>
 
     <!-- Ventana modal para el formulario -->
@@ -36,7 +30,7 @@ try {
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- Formulario para agregar o editar categoría -->
+                
                     <form id="formCategoria" method="POST" action="modelo/guardarCategoria.php">
                         <input type="hidden" id="editId" name="editId" value="">
                         <div class="form-group">
@@ -50,7 +44,7 @@ try {
         </div>
     </div>
 
-    <!-- Tabla de categorías -->
+    
     <table class="table table-bordered table-striped mt-4">
         <thead>
             <tr>
@@ -79,7 +73,7 @@ try {
     </table>
 </div>
 
-<!-- Scripts para Bootstrap y funcionalidad -->
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
